@@ -1,0 +1,53 @@
+@mixin font($size, $family, $weight, $color: #2a2626) {
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin margin-nullify {
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  &__title {
+    @include font(18px, "Open Sans", normal, #ffffff);
+    @include margin-nullify();
+    margin-bottom: 9px;
+  }
+
+  &__label {
+    display: flex;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    @include margin-nullify();
+    padding-left: 10px;
+    width: 415px;
+    height: 50px;
+    border: none;
+    outline: 0;
+  }
+
+  &__button {
+    width: 70px;
+    height: 50px;
+    border: none;
+    background: url(../../images/form-button.svg) #fe8a02 no-repeat center;
+    transition: 0.6s ease;
+    &:hover {
+      cursor: pointer;
+      background-color: #ea7600;
+    }
+  }
+
+  &__description {
+    @include font(12px, "Open Sans", normal, #ffffff);
+    @include margin-nullify();
+  }
+
+  &__description-span {
+  }
+}

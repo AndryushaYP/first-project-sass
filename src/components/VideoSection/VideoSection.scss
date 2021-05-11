@@ -1,0 +1,43 @@
+@mixin font($size, $family, $weight, $color: #2a2626) {
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin margin-nullify {
+  margin: 0;
+  padding: 0;
+}
+
+.video-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 165px 0;
+  box-sizing: border-box;
+  position: relative;
+  height: 814px;
+
+  &__title {
+    text-align: center;
+    @include margin-nullify();
+    @include font(60px, "Neucha", normal);
+    &-span {
+      color: #fe8a02;
+    }
+  }
+
+  &__subtitle {
+    @include margin-nullify();
+    @include font(16px, "Open Sans", normal);
+    margin: 27px 0 30px;
+  }
+
+  &__video {
+    position: absolute;
+    bottom: -100px;
+    left: center;
+    border: none;
+  }
+}

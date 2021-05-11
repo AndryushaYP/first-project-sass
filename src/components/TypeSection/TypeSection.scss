@@ -1,0 +1,100 @@
+@mixin font($size, $family, $weight, $color: #2a2626) {
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin margin-nullify {
+  margin: 0;
+  padding: 0;
+}
+
+.type-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px 30px;
+  max-width: 1440px;
+  box-sizing: border-box;
+  padding: 100px 165px;
+  background: url(../../images/background-header.svg);
+  background-color: #f5f4f0;
+  background-size: 1440px 914px;
+  background-repeat: no-repeat;
+  &_dark {
+    background-color: #b09a81;
+  }
+
+  &__preview {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    &__image {
+      width: 578px;
+      height: 434px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .preview {
+      display: flex;
+      flex-direction: column;
+      max-width: 502px;
+
+      &__subtitle {
+        @include margin-nullify();
+        @include font(24px, "Neucha", normal, #908d8b);
+        &_dark {
+          color: #d7ccc0;
+        }
+      }
+
+      &__title {
+        @include margin-nullify();
+        @include font(60px, "Neucha", normal);
+        margin: 0 0 30px;
+        &_dark {
+          color: #ffffff;
+        }
+      }
+
+      &__description {
+        @include margin-nullify();
+        @include font(34px, "Neucha", normal);
+        &_dark {
+          color: #ffffff;
+        }
+      }
+    }
+    &_dark {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .information {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    &__title {
+      @include font(14px, "Open Sans", normal, #ffffff);
+      display: block;
+      width: 100%;
+      @include margin-nullify();
+      background: #b09a81;
+      padding: 5px;
+      &_dark {
+        background: #ffffff;
+        color: #b09a81;
+      }
+    }
+
+    &__text {
+      max-width: 540px;
+      @include margin-nullify();
+      @include font(16px, "Open Sans", normal);
+      &_dark {
+        color: #ffffff;
+      }
+    }
+  }
+}

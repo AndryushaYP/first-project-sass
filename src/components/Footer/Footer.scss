@@ -1,0 +1,46 @@
+@mixin font($size, $family, $weight, $color: #2a2626) {
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin margin-nullify {
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 165px;
+
+  &__form {
+    background: #42413c;
+    display: flex;
+    align-content: center;
+    gap: 122px;
+    padding: 55px 50px;
+    margin-bottom: 76px;
+  }
+
+  &__subscribe {
+    @include font(34px, "Neucha", normal, #ffffff);
+    @include margin-nullify();
+  }
+
+  &__copyright {
+    @include font(14px, "Open Sans", normal);
+    @include margin-nullify();
+    text-align: center;
+
+    &:nth-of-type(2n) {
+      margin: 16px 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #1085c5;
+  }
+}

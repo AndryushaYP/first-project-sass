@@ -1,0 +1,59 @@
+@mixin font($size, $family, $weight, $color: #2a2626) {
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin margin-nullify {
+  margin: 0;
+  padding: 0;
+}
+
+.types-section {
+  display: flex;
+  padding: 200px 165px 100px;
+  box-sizing: border-box;
+  max-width: 1440px;
+  background: #42413c;
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    list-style-type: none;
+    gap: 30px;
+    @include margin-nullify();
+
+    &__item {
+      box-sizing: border-box;
+      background: #f5f4f0;
+      padding: 24px;
+      max-width: 350px;
+      min-height: 323px;
+    }
+
+    &__item-title {
+      @include margin-nullify();
+      @include font(52px, "Neucha", normal, #f5f4f0);
+      &-span {
+        color: #fe8a02;
+      }
+    }
+    &__number {
+      @include font(64px, "Neucha", normal);
+      @include margin-nullify();
+    }
+
+    &__title {
+      @include font(34px, "Neucha", normal, #fe8a02);
+      @include margin-nullify();
+      margin: 16px 0 40px;
+    }
+
+    &__description {
+      @include font(16px, "Open Sans", normal);
+      @include margin-nullify();
+    }
+  }
+}
